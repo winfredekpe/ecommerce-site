@@ -142,7 +142,10 @@ function filter() {
   }
 }
 
-function removeitem() {}
+function removeitem() { }
+
+
+
 
 function updateslider(e) {
   // update value
