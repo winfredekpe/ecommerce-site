@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="all.min.css" />
+  </head>
+  <body>
+    <div class="output">
+      <!-- modal pop up after purchase -->
+      <div class="modal">
+        <div class="box">
+          <div class="closeit">Close</div>
+          <div class="closebtn">Thanks For shopping With Us</div>
+          <div class="smiley"><i class="fas fa-heart"></i></div>
+        </div>
+      </div>
+      <!-- side bar checkout list -->
+      <div class="checkout">
+        <!-- top section -->
+        <div class="top">
+          <!-- total price section -->
+          <div class="totalprice">
+            <i class="fas fa-dollar-sign fa-2x"></i
+            ><span id="finaltotalprice">0</span>
+          </div>
+          <!-- checkoutbtn -->
+          <div class="checkoutbtn"><i class="fab fa-paypal"></i></div>
+          <!-- close butto section -->
+          <div class="close"><i class="fas fa-times-circle fa-2x"></i></div>
+        </div>
+        <!-- selected products -->
+        <div class="selected">
+          <!-- items in cart -->
+          <!-- <div class="item">
+            <div class="remove"><i class="fas fa-times-circle"></i></div>
+            <div class="productcount">1</div>
+            <div class="img"></div>
+            <input type="range" min="1" max="20" step="1" value="1" />
+            <div class="itemtotal">$20</div>
+          </div> -->
+          <!-- end of added products -->
+        </div>
+      </div>
+      <!-- navigaton section -->
+      <section class="navigation">
+        <!-- navigation head section -->
+        <div class="header">
+          <!-- the logo -->
+          <div class="logo"><i class="fab fa-shopify fa-2x"></i></div>
+          <!-- filter section -->
+          <section class="filter">
+            <!-- fiilter section -->
+            <div class="filter">
+              <!-- filter left icon -->
+              <div class="left"><i class="fas fa-filter"></i></div>
+              <!-- filter selection bar -->
+              <div class="right">
+                <select name="" id="" class="select">
+                  <option value="" data-price="1000">ALL</option>
+                  <option value="" data-price="20">less than $20</option>
+                  <option value="" data-price="50">less than $50</option>
+                  <option value="" data-price="60">less than $60</option>
+                  <option value="" data-price="80">hello than $80</option>
+                </select>
+              </div>
+            </div>
+          </section>
+          <!-- navigation links -->
+          <nav class="cart">
+            <i class="fas fa-shopping-cart fa-2x"></i>
+            <div class="number">0</div>
+          </nav>
+        </div>
+      </section>
+
+      <!-- carousel keyframe aniimation section -->
+
+      <section class="carousel">
+        <!-- carousel here -->
+        <div class="carobox">
+          <figure class="icon-cards">
+            <div class="icon-cards__content">
+              <div class="icon-cards__item">
+                <span class="h1"></span>
+              </div>
+              <div class="icon-cards__item">
+                <span class="h1"></span>
+              </div>
+              <div class="icon-cards__item">
+                <span class="h1"></span>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </section>
+
+      <!-- product listings -->
+      <section class="products">
+        <div class="listings">
+          <!-- individual products -->
+          <div
+            class="product"
+            style="
+              background: url('img/7.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="1"
+          >
+            <div class="btn">
+              <i class="fas fa-shopping-bag fa-2x"></i>
+            </div>
+            <div class="price">$20.4</div>
+          </div>
+
+          <div
+            class="product"
+            style="
+              background: url('img/6.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="2"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$27</div>
+          </div>
+
+          <div
+            class="product"
+            style="
+              background: url('img/8.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="3"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$90</div>
+          </div>
+
+          <div
+            class="product"
+            style="
+              background: url('img/5.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="4"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$83.9</div>
+          </div>
+
+          <div
+            class="product"
+            style="
+              background: url('img/4.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="5"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$30</div>
+          </div>
+
+          <div
+            class="product"
+            style="
+              background: url('img/3.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="6"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$22.9</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/2.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="7"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$24</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/1.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="8"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$11</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/7.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="9"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$100</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/2.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="10"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$76.1</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/4.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="11"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$12.9</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/6.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="12"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$28</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/8.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="13"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$96</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/7.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="14"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$76</div>
+          </div>
+          <div
+            class="product"
+            style="
+              background: url('img/1.jpg');
+              background-position: center;
+              background-size: cover;
+            "
+            data-id="15"
+          >
+            <div class="btn"><i class="fas fa-shopping-bag fa-2x"></i></div>
+            <div class="price">$70</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- footer section -->
+      <div class="footer">
+        <div class="text">
+          <!-- Thank you for shopping with us -->
+          <span>
+            &copy Made With Love By Azariah
+            <i class="fab fa-instagram fa-2x love"></i
+          ></span>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="all.min.js"></script>
+  </body>
+</html>
