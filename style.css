@@ -398,7 +398,7 @@ body {
   -webkit-box-shadow: 6px 6px 14px #191818, -6px -6px 14px #4a4848;
           box-shadow: 6px 6px 14px #191818, -6px -6px 14px #4a4848;
   position: absolute;
-  padding: 0.6rem;
+  padding: 0.2rem;
   right: 0px;
   top: 0;
   -webkit-transform: translate(20px, -1.5rem);
@@ -406,6 +406,10 @@ body {
   border-radius: 50%;
   -webkit-transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
   transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.products .listings .product .btn i {
+  pointer-events: none;
 }
 
 .products .listings .product .btn:active {
@@ -726,6 +730,17 @@ body {
   margin-top: 10rem;
   font-weight: bold;
   font-family: monospace;
+}
+
+.box .smiley {
+  -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.box .smiley:hover {
+  color: rgba(4, 4, 116, 0.863);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .closebtn {

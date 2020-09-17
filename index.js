@@ -69,17 +69,18 @@ function addtocart(e) {
     return;
   } else {
     // creating the item
-
+    // the close button
     remove = document.createElement("div");
     remove.classList.add("remove");
     closelogo = document.createElement("i");
     closelogo.classList.add("fas");
     closelogo.classList.add("fa-times-circle");
-    closelogo.classList.add("forcepop");
+    closelogo.classList.add("popmydad");
+    remove.appendChild(closelogo);
+    // end of item close button
     productcount = document.createElement("div");
     productcount.classList.add("productcount");
     productcount.innerText = "1";
-    remove.innerHTML = '<i class="fas fa-times-circle forcepop></i>';
     item = document.createElement("div");
     item.classList.add("item");
     item.setAttribute("data-id", id);
@@ -109,11 +110,8 @@ function addtocart(e) {
 
     // adding event listeners to new items
 
-    // deleteing
-    removebtns = document.querySelectorAll(".forcepop");
-    removebtns.forEach((x) => {
-      x.addEventListener("click", removeitem);
-    });
+    // deleteing from the list of selected it
+    removeitem();
 
     // updating from slider
     sliders = document.querySelectorAll(".item input");
@@ -142,11 +140,7 @@ function filter() {
   }
 }
 
-function removeitem() { }
-
-
-
-
+// updating the value of the seleced when the amount of items to buy is changed by sliding
 function updateslider(e) {
   // update value
   value = e.target.value;
@@ -159,12 +153,52 @@ function updateslider(e) {
   totalfinalprice();
 }
 
+// updating the total price of the selected price to be paid
+
 function totalfinalprice() {
   fp = document.querySelectorAll("#fpu");
   amount = 0;
   fp.forEach((finalp) => {
-    p = parseFloat(finalp.textContent.replace("$", ""));
+    p = finalp.textContent.replace("$", "");
+    p = Number(p);
     amount += p;
   });
-  finaltotalprice.textContent = amount;
+  finaltotalprice.textContent = amount.toFixed(2);
 }
+
+// removing an item from the list of selected items
+
+function removeitem() {
+  popbtns = document.querySelectorAll(".popmydad");
+  popbtns.forEach((popbtn) => {
+    popbtn.addEventListener("click", function () {
+      parentbox = this.parentNode.parentNode.remove();
+      console.log(parentbox);
+      totalfinalprice();
+      updatecartnumber();
+    });
+  });
+}
+
+// updating the cart number after delete an item
+
+function updatecartnumber() {
+  itms = document.querySelector(".selected");
+  charttotal = document.querySelector(".number");
+  num = itms.children.length;
+  charttotal.textContent = num;
+}
+
+// removing al items from cat after clicking the close button
+
+closeit = document.querySelector(".closeit");
+closeit.addEventListener("click", (x) => {
+  itms = document.querySelector(".selected");
+  itms.innerHTML = "";
+  // hiding the checkout section and modal
+  modal.style.display = "none";
+  checkout.style.display = "none";
+  // updating the number also and other updates
+  updatecartnumber();
+  totalfinalprice();
+});
