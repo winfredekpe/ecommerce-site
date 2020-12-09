@@ -37,7 +37,7 @@ body {
 }
 
 .header {
-  width: 100%;
+  width: 95%;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -45,6 +45,9 @@ body {
   border-radius: 50px;
   background: linear-gradient(145deg, #2c2b2b, #343333);
   box-shadow: 6px 6px 14px #191818, -6px -6px 14px #4a4848;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
 }
 
 .logo,
@@ -145,7 +148,7 @@ body {
   width: 100vw;
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 6rem;
   .carobox {
     width: 50%;
     margin-top: 2rem;
@@ -263,7 +266,8 @@ body {
   width: 100%;
   @include center;
   padding-top: 3rem;
-  margin-top: 2rem;
+  margin-top: -1rem;
+  transform: scale(0.95);
   .listings {
     width: 100%;
     display: grid;
@@ -283,7 +287,7 @@ body {
       transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
       &:hover {
         filter: brightness(0.7);
-        transform: scale(1.11);
+        transform: scale(1.07);
       }
 
       .btn {

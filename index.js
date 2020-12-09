@@ -67,6 +67,10 @@ function addtocart(e) {
   if (allid.includes(id)) {
     alert("item added already");
     return;
+  } else if (e.target.parentNode.classList.contains("btn")) {
+    return;
+  } else if (e.target.classList.contains("btn")) {
+    return;
   } else {
     // creating the item
     // the close button
@@ -85,6 +89,7 @@ function addtocart(e) {
     item.classList.add("item");
     item.setAttribute("data-id", id);
     item.setAttribute("data-price", parseInt(price.replace("$", "")));
+    item.setAttribute("id", "rm");
     imgdiv = document.createElement("div");
     imgdiv.classList.add("img");
     imgdiv.style.background = bg;
@@ -110,14 +115,16 @@ function addtocart(e) {
 
     // adding event listeners to new items
 
-    // deleteing from the list of selected it
-    removeitem();
-
     // updating from slider
     sliders = document.querySelectorAll(".item input");
     sliders.forEach((x) => {
       x.addEventListener("input", updateslider);
     });
+
+    // functions for deleting items from a list
+    removeitem();
+    // last bug deleter
+    deletelast();
 
     // updating total final price
     totalfinalprice();
@@ -166,20 +173,6 @@ function totalfinalprice() {
   finaltotalprice.textContent = amount.toFixed(2);
 }
 
-// removing an item from the list of selected items
-
-function removeitem() {
-  popbtns = document.querySelectorAll(".popmydad");
-  popbtns.forEach((popbtn) => {
-    popbtn.addEventListener("click", function () {
-      parentbox = this.parentNode.parentNode.remove();
-      console.log(parentbox);
-      totalfinalprice();
-      updatecartnumber();
-    });
-  });
-}
-
 // updating the cart number after delete an item
 
 function updatecartnumber() {
@@ -202,3 +195,28 @@ closeit.addEventListener("click", (x) => {
   updatecartnumber();
   totalfinalprice();
 });
+
+// function  for deleting items from the list of selected items
+function removeitem() {
+  popbtns = document.querySelectorAll(".popmydad");
+  popbtns.forEach((popbtn) => {
+    popbtn.addEventListener("click", function () {
+      parentbox = this.parentNode.parentNode.remove();
+      totalfinalprice();
+      updatecartnumber();
+    });
+  });
+}
+
+// function for deleting the last item
+function deletelast() {
+  removed = selecteditems.lastElementChild;
+  selecteditems.lastElementChild.children[3].addEventListener(
+    "click",
+    function () {
+      removed.remove();
+      totalfinalprice();
+      updatecartnumber();
+    }
+  );
+}
